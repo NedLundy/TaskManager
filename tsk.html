@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Task Manager</title>
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <script>
+            function addTask() {
+                var name = document.getElementById("name").value;
+                var due  = document.getElementById("due").value;
+                var urg  = document.getElementById("urg").value;
+                var desc = document.getElementById("desc").value;
+                if (name === ''||due === ''){
+                    alert("Field left blank. Please ensure completion of the form.");
+                    return;
+                }
+
+                var body = document.getElementById("tasks");
+                var row  = body.insertRow(); //I MADE IT SO IT WOULD ADD ROWS!!!
+                row.insertCell(0).innerText = name;
+                row.insertCell(1).innerText = due;
+                row.insertCell(2).innerText = urg;
+                row.insertCell(3).innerText = desc;
+                var status = row.insertCell(4);
+                var box = document.createElement("input");
+                box.type = 'checkbox';
+                box.onclick = function() {
+                // makes cool lines when you click 
+                if (box.checked) {
+                    row.style.textDecoration = 'line-through';
+                } else {
+                    row.style.textDecoration = '';
+                }
+                }
+      statusCell.appendChild(box);
+
+      document.getElementById('name').value = '';
+      document.getElementById('due').value  = '';
+      document.getElementById('urg').selectedIndex = 0;
+      document.getElementById('desc').value = '';
+    }
+  </script>
+</head>
+<body>
+  <h1>Tasks</h1>
+
+  <p>
+    <input id="name" placeholder="Task name">
+    <input id="due" type="date">
+    <select id="urg">
+      <option>High</option>
+      <option>Medium</option>
+      <option>Low</option>
+    </select>
+    <input id="desc" placeholder="Description">
+    <button onclick="addTask()">Add Task</button>
+  </p>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Due</th>
+        <th>Priority</th>
+        <th>Description</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="tasks">
+      <!-- task drop spot since id and yeah -->
+    </tbody>
+  </table>
+</body>
+</html>
