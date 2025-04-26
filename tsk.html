@@ -32,17 +32,17 @@
                     row.style.textDecoration = '';
                 }
                 }
-      statusCell.appendChild(box);
+      status.appendChild(box);
 
       document.getElementById('name').value = '';
       document.getElementById('due').value  = '';
       document.getElementById('urg').selectedIndex = 0;
       document.getElementById('desc').value = '';
     }
-  </script>
+        </script>
 </head>
 <body>
-  <h1>Tasks</h1>
+  <h1>*IT'S TASK GIRL SUMMER*</h1>
 
   <p>
     <input id="name" placeholder="Task name">
@@ -53,22 +53,23 @@
       <option>Low</option>
     </select>
     <input id="desc" placeholder="Description">
-    <button onclick="addTask()">Add Task</button>
+    <button onclick="addTask()"><strong>Add Task</strong></button>
   </p>
 
   <table border="1">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Due</th>
-        <th>Priority</th>
-        <th>Description</th>
-        <th>Status</th>
+        <th>name</th>
+        <th>due</th>
+        <th>priority</th>
+        <th>description</th>
+        <th>status</th>
       </tr>
     </thead>
     <tbody id="tasks">
-      <!-- task drop spot since id and yeah -->
+      <!-- this is where the tasks go -->
     </tbody>
   </table>
 </body>
 </html>
+
